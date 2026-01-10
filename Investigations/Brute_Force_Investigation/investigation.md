@@ -11,10 +11,10 @@ Multiple failed Windows authentication attempts (Event ID 4625) were observed fo
 - Built a timeline to reconstruct events
 
 ## Timeline
-[View authentication timeline](./timeline.png)
+[View timeline](./timeline.png)
 
 
-![Authentication Timeline](Investigations/Brute_Force_Investigation/Screenshots:timeline.png)
+![Timeline](./timeline.png)
 
 ## Privileged Activity Review (Event ID 4672)
 Event ID 4672 indicates special privileges were assigned to an account.  

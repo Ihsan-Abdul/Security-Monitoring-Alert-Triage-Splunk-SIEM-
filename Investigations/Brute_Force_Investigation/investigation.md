@@ -6,7 +6,7 @@ A successful login followed from the same IP, which could indicate credential co
 
 ## Timeline
 I created a timeline of all authentication events sorted by time.  
-Refer to [View authentication timeline](timeline.png) for details.
+Refer to ![timeline](timeline.png) for details.
 
 ## Privileged Activity (Event ID 4672)
 Event 4672 shows special privileges were assigned to an admin account.  

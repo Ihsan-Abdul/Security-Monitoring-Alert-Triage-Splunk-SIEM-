@@ -1,18 +1,25 @@
 # Windows Brute-force Investigation
 
-## Summary
-I investigated multiple failed Windows login attempts (Event ID 4625) for user `john`.  
-A successful login followed from the same IP, which could indicate credential compromise.
+## What triggered this investigation
+Multiple failed Windows authentication attempts (Event ID 4625) were observed for the user `john` from a single source IP.
+
+## What I did
+- Identified repeated failed logins
+- Pivoted on the affected user
+- Pivoted on the source IP
+- Reviewed privileged activity (Event ID 4672)
+- Built a timeline to reconstruct events
 
 ## Timeline
-I created a timeline of all authentication events sorted by time.  
-Refer to ![timeline](timeline.png) for details.
+[View authentication timeline](timeline.png)
 
-## Privileged Activity (Event ID 4672)
-Event 4672 shows special privileges were assigned to an admin account.  
-This account and IP were different from the brute-force activity.  
-No evidence links it to the attempted attack.
+![Authentication Timeline](timeline.png)
 
-## Assessment
-- Suspected brute-force attack detected
-- No confirmed privilege escalation
+## Privileged Activity Review (Event ID 4672)
+Event ID 4672 indicates special privileges were assigned to an account.  
+In this case, the privileged login belonged to a known admin account from a different IP and did not correlate with the brute-force activity.
+
+## Conclusion
+- Brute-force behavior suspected
+- No evidence of privilege escalation
+- Activity documented for monitoring

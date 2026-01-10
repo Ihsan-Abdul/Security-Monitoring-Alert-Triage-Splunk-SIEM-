@@ -11,7 +11,8 @@ Multiple failed Windows authentication attempts (Event ID 4625) were observed fo
 - Built a timeline to reconstruct events
 
 ## Timeline
-[View timeline](Investigations/Brute_Force_Investigation/Screenshots:timeline.png)
+[View authentication timeline](./timeline.png)
+
 
 ![Authentication Timeline](Investigations/Brute_Force_Investigation/Screenshots:timeline.png)
 

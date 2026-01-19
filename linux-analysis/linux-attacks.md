@@ -36,7 +36,7 @@ Daily attacks from January 10-14 with consistent patterns:
 ## Detection Queries Developed
 1. **Linux SSH Brute Force Detection** - [View query](spl-queries/linux-brute-force-detection-spl)
 2. **Root Account Attack Detection** - [View query](spl-queries/linux-root-attacks-detection.spl)
-3. **Non-Standard Port Detection** - [View query](spl-queries/linux-port-analysis.spl)
+3. **Non-Standard Port Detection** - [View query](spl-queries/linux-port-analysis-spl)
 
 ## MITRE ATT&CK Mapping
 - **T1110 - Brute Force**: SSH password guessing

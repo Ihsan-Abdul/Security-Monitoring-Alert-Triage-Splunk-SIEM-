@@ -80,14 +80,6 @@ For this investigation, I created several Splunk detection queries:
 - `windows-analysis/windows-attacks.md` - Windows attack analysis  
 - `linux-analysis/linux-attacks.md` - Linux attack analysis
 
-### Detection Queries:
-- 9 Splunk query files (.spl) across three categories
-- Each query designed to detect specific attack patterns
-
-### Evidence:
-- 10 screenshot files (.png) showing actual detection results
-- Visual proof of the attacks found
-
 ---
 
 *This project demonstrates practical security monitoring skills using Splunk to detect and investigate real-world attack patterns.*

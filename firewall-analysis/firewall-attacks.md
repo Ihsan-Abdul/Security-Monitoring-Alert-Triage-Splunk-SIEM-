@@ -32,7 +32,7 @@ Three rotating source IPs:
 ## Detection Methodology
 Built a Splunk query to identify multiple failed connection and then successful access within 10-minute windows.
 
-[View detection query](spl-queries/firewall-bruteforce-detection.spl)
+[View detection query](spl-queries/firewall-bruteforce-detection-spl)
 
 ## MITRE ATT&CK Mapping
 - **T1110 - Brute Force**: Password guessing against SSH and RDP

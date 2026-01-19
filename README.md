@@ -79,7 +79,3 @@ For this investigation, I created several Splunk detection queries:
 - `firewall-analysis/firewall-attacks.md` - Firewall attack analysis
 - `windows-analysis/windows-attacks.md` - Windows attack analysis  
 - `linux-analysis/linux-attacks.md` - Linux attack analysis
-
----
-
-*This project demonstrates practical security monitoring skills using Splunk to detect and investigate real-world attack patterns.*

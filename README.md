@@ -1,5 +1,4 @@
 # Security-Monitoring-Alert-Triage-Splunk-SIEM-
-# Splunk Security Analysis Project
 
 ## Overview
 This project documents my analysis of firewall, Windows, and Linux logs to identify and investigate a multi-stage security attack. Over the course of this investigation, I discovered a coordinated attacks targeting critical systems across the environment.

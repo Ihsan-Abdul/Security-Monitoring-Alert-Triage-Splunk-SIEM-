@@ -1,0 +1,4 @@
+index=linux_logs process="ssh" port!="22"
+| bin _time span=24h
+| stats count, earliest(_time) as first_seen by hostname, port
+| where count >= 3

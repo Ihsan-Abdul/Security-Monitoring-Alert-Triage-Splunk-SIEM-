@@ -1,0 +1,3 @@
+index=windows_logs EventID=4624 AccountName="admin"
+| search NOT SourceNetwork="Internal"
+| stats count by SourceIP, _time

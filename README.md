@@ -1,81 +1,70 @@
-# Security-Monitoring-Alert-Triage-Splunk-SIEM-
+# Security Monitoring & Alert Triage with Splunk SIEM
 
 ## Overview
-This project documents my analysis of firewall, Windows, and Linux logs to identify and investigate a multi-stage security attack. Over the course of this investigation, I discovered a coordinated attacks targeting critical systems across the environment.
+This project demonstrates a hands-on detection engineering workflow using Splunk as a SIEM. It documents the creation of correlation searches, the configuration of alerts, and the investigative process to uncover a simulated multi-stage attack across Windows, Linux, and firewall systems. The goal is to showcase practical skills in log analysis, threat hunting, and security operations.
 
-## What Happened
-Attackers executed a 5-day campaign against the network with daily precision:
-- **Morning attacks**: Targeted Linux SSH servers (10:00 AM daily)
-- **Afternoon attacks**: Targeted Windows RDP servers (3:00 PM daily)  
-- **Post-compromise activity**: Privilege escalation and lateral movement attempts
-- **Consistent success**: Attackers gained access every single day
+## Key Skills Demonstrated
+*   SIEM/Splunk Operations: Building and scheduling correlation searches (SPL), configuring alerts, and creating dashboards.
+*   Detection Engineering: Developing rules to identify brute-force attacks, privilege escalation, lateral movement, and anomalous port activity.
+*   Incident Investigation: Correlating events across multiple data sources (Firewall, Windows Event Logs, Linux auth logs) to reconstruct an attack timeline.
+*   Threat Intelligence Application: Mapping findings to the MITRE ATT&CK framework (T1110, T1059.001, T1021.002, etc.).
+*   Security Documentation: Producing detection catalogs and actionable playbooks for Security Operations Center (SOC) use.
 
-## Key Findings:
+## Project Structure & Navigation
+Security-Monitoring-Alert-Triage-Splunk-SIEM/
+ ── README.md # Currently Here
+ ── detections/ # The main queries built and documented
+      ── README.md # Catalog of production-ready SPL queries
+ ── Investigations/ # Analysis & Deep Dives
+      ── firewall-analysis/
+      ── windows-analysis/
+      ── linux-analysis/
 
-### Firewall Attacks
-- Brute force attacks against SSH (port 22) and RDP (port 3389)
-- 100% success rate - attackers got in every time
-- Daily pattern at 10:00 AM and 3:00 PM
-- Multiple source IPs rotating: 203.0.113.88, 203.0.113.45, 198.51.100.77
+*   For Detection Logic: Review the query catalog and rationale in `/detections/README.md`.
+*   For Detailed Forensic Analysis: See the in-depth reports in the `/Investigations/` directory.
 
-[See detailed firewall analysis](firewall-analysis/firewall-attacks.md)
+## Technical Implementation
 
-### Windows Attacks  
-- Daily compromise of 'john' account via brute force
-- Privilege escalation to 'admin' account
-- Malicious PowerShell execution with encoded commands
-- Lateral movement attempts using PsExec to domain controller
+### Tools & Data Sources
+*   SIEM Platform: Splunk (Free License)
+*   Log Sources: Simulated logs from:
+    *   Network Firewall (Deny/Allow events on ports 22, 3389, 4444)
+    *   Windows Servers (Event IDs 4624, 4625, 4688, 4672)
+    *   Linux Servers (SSH auth logs via `/var/log/auth.log` format)
 
-[See detailed Windows analysis](windows-analysis/windows-attacks.md)
+### What I Built
+1.  Correlation Searches: Developed SPL queries to detect patterns like "multiple fails followed by success" for brute-force attacks.
+2.  Operational Alerts: Configured scheduled searches with threshold-based triggering and log event actions.
+3.  Investigative Analysis: Created targeted searches to uncover privilege escalation (`admin` account usage) and lateral movement (`PsExec`).
 
-### Linux Attacks
-- Root account compromise via SSH brute force
-- Attackers used non-standard ports (4444, 4445) to evade detection
-- Same attack infrastructure as Windows attacks
-- Full system control achieved daily
+### Key Learnings & Insights
+*   Attack Patterns are Discoverable: Consistent timing (e.g., 10:00 AM daily) and IP rotation are strong indicators of automated, malicious activity.
+*   Correlation is Critical: Isolated events in firewall logs only tell part of the story; linking them to Windows/Linux authentication events reveals the full breach chain.
+*   Detection Evasion is Common: Attackers used non-standard ports (4444, 4445) for SSH, reinforcing the need for detection rules that focus on behavior, not just port numbers.
+*   The Value of Structured Output: Using `eval` to assign severity scores and clear alert names dramatically speeds up triage.
 
-[See detailed Linux analysis](linux-analysis/linux-attacks.md)
+---
 
-## What I Built
-For this investigation, I created several Splunk detection queries:
+## How to Reproduce This Lab
 
-### Detection Queries Developed:
-1. **Brute Force Detection** - Identifies multiple failed attempts followed by success
-2. **Privileged Account Monitoring** - Flags admin accounts accessed from external IPs
-3. **Malicious Process Detection** - Finds encoded PowerShell and lateral movement tools
-4. **Non-Standard Port Detection** - Identifies services running on unusual ports
+### Prerequisites
+1.  Splunk Instance: Download and install Splunk Enterprise (Free) or start a trial.
+2.  Sample Data: The anonymized log samples used in this project are available in the `/sample-logs/` directory (See Next Steps below to create this).
 
-## What I Learned:
+### Step-by-Step Setup Guide (Conceptual)
+(A fully reproducible guide with automation is a planned enhancement. The current project focuses on the detection logic and analysis.)
+1.  Configure Data Inputs: In Splunk, set up dummy inputs for firewall, Windows, and Linux log formats.
+2.  Ingest Sample Logs: Use the sample-log files to populate your Splunk instance with the event sequences described in the investigation reports.
+3.  Implement Detections: Search the SPL queries from the detections folder into Splunk as new scheduled searches.
+4.  Configure Alerts: Set alert actions per the screenshots in the `Detections/` folder.
+5.  Investigate: Run the provided investigative queries to trace the attack from initial access to lateral movement.
 
-### Technical Insights:
-1. **Attackers follow patterns** - The same timing daily made detection easier once I knew what to look for
-2. **Cross-platform targeting is common** - Attackers went after both Windows AND Linux, not one or the other
-3. **Port changes don't hide attacks** - Using ports 4444/4445 instead of 22 didn't prevent detection
-4. **Post-compromise activity tells the story** - The initial breach was just the beginning
+---
 
-### Investigation Takeaways:
-- **Correlation is key** - Looking at firewall, Windows, and Linux logs together revealed the full attack chain
-- **Timing matters** - Consistent attack times (10 AM, 3 PM) indicated automation
-- **IP rotation is a red flag** - Different source IPs each day suggested coordinated infrastructure
-- **Success breeds repetition** - Since they succeeded day 1, they kept coming back
 
-### Splunk Skills Developed:
-- Writing effective stats queries with time windows
-- Using eval for conditional logic and severity scoring
-- Creating actionable alerts from detection logic
-- Structuring searches for both detection and investigation phases
+## Related Project: Incident Response Report
+This detection project is part one of a two-part portfolio series. The investigation documented here is continued in a dedicated Incident Response Report, which details the full forensic timeline, containment actions, and executive summary.
 
-### Security Mindset Shift:
-1. **Initial access patterns** (how they get in)
-2. **Privilege escalation** (how they get more access)  
-3. **Lateral movement** (how they spread)
-4. **Command and control** (how they communicate out)
-5. **Data exfiltration** (what they steal)
+Link to the companion report: Incident Response Report: Analysis of a 5-Day Brute Force Campaign (https://github.com/yourusername/incident-response-report-repo)
 
-## Files in This Repository
-
-### Documentation:
-- `README.md` - This overview file
-- `firewall-analysis/firewall-attacks.md` - Firewall attack analysis
-- `windows-analysis/windows-attacks.md` - Windows attack analysis  
-- `linux-analysis/linux-attacks.md` - Linux attack analysis
+---

@@ -15,11 +15,12 @@ This directory contains Splunk queries developed to detect the attack campaign d
 
 
 
-## Operational Note
-The triage steps above outline the initial analyst actions for each detection. For the complete incident response lifecycle—including evidence of containment actions, eradication steps, and reporting, refer to the dedicated **[Incident Response Report](https://github.com/yourusername/incident-response-report-repo)** for this campaign.
-
-
 ## Deployment Notes
 * **Thresholds:** Adjust `failed_attempts >= 5` thresholds based on environment baselines.
 * **Scheduling:** Recommended cron schedule is `*/15 * * * *` for brute-force detections.
 * **Action:** All alerts are configured to trigger a "Log Event" to the `_internal` index. In production, integrate with a ticketing system platform.
+
+
+
+## Operational Note
+The triage steps above outline the initial analyst actions for each detection. For the complete incident response lifecycle—including evidence of containment actions, eradication steps, and reporting, refer to the dedicated **[Incident Response Report](https://github.com/yourusername/incident-response-report-repo)** for this campaign.

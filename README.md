@@ -12,13 +12,13 @@ This project demonstrates a hands-on detection engineering workflow using Splunk
 
 ## Project Structure & Navigation
 Security-Monitoring-Alert-Triage-Splunk-SIEM/
- ── README.md # Currently Here
- ── detections/ # The main queries built and documented
-      ── README.md # Catalog of production-ready SPL queries
- ── Investigations/ # Analysis & Deep Dives
-      ── firewall-analysis/
-      ── windows-analysis/
-      ── linux-analysis/
+*  README.md # Currently Here
+*   detections/ # The main queries built and documented
+      *README.md # Catalog of production-ready SPL queries
+*  Ivestigations/ # Analysis & Deep Dives 
+      *  linux-analysis/
+      *  windows-analysis/
+      *  firewall-analysis/
 
 *   For Detection Logic: Review the query catalog and rationale in `/detections/README.md`.
 *   For Detailed Forensic Analysis: See the in-depth reports in the `/Investigations/` directory.

@@ -1,3 +1,6 @@
+# Firewall Attack Analysis
+
+
 # Firewall Bruteforce Alert SPL Query
 
 index=firewall_logs Action="DENY"

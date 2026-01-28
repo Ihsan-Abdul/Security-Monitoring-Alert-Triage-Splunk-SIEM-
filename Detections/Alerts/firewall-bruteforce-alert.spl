@@ -1,4 +1,0 @@
-index=firewall_logs Action="DENY" (Destination="*:22" OR Destination="*:3389")
-| bin _time span=10m
-| stats count by extracted_Source, _time
-| where count >= 10

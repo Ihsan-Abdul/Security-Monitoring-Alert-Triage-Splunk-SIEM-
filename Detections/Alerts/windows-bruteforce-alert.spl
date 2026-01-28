@@ -1,4 +1,0 @@
-index=windows_logs EventID=4625
-| bin _time span=10m  
-| stats count by AccountName, _time
-| where count >= 8

@@ -1,6 +1,6 @@
 # Detection  Documentation
 
-This directory contains Splunk queries developed to detect the multi-stage attack campaign documented in this repository. Each detection is designed to be scheduled as an alert within a SIEM.
+This directory contains Splunk queries developed to detect the attack campaign documented in this repository. Each detection is designed to be scheduled as an alert within Splunk.
 
 ## Detection Catalog
 

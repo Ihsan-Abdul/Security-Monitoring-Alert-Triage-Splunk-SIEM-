@@ -13,9 +13,9 @@ This project demonstrates a hands-on detection engineering workflow using Splunk
 ## Project Structure & Navigation
 Security-Monitoring-Alert-Triage-Splunk-SIEM/
 *  README.md # Currently Here
-*   detections/ # The main queries built and documented
+*  Detections # The main queries built and documented
         *README.md # Catalog of production-ready SPL queries
-*  Ivestigations/ # Analysis & Deep Dives 
+*  Investigations # Analysis & Deep Dives 
       *  linux-analysis/
       *  windows-analysis/
       *  firewall-analysis/

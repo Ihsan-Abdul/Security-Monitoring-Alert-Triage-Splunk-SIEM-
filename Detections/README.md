@@ -14,6 +14,11 @@ This directory contains Splunk queries developed to detect the attack campaign d
 | **Linux SSH Root Attack** | T1110.003, T1078 | [root-attacks-investigation.spl](/Investigations/linux-analysis/spl-queries/root-attacks-investigation.spl) | Specifically detects brute force attacks against the root account that were successful. | Critical | Root access achieved. Immediate containment required on target host. |
 
 
+
+## Operational Note
+The triage steps above outline the initial analyst actions for each detection. For the complete incident response lifecycle—including evidence of containment actions, eradication steps, and reporting, refer to the dedicated **[Incident Response Report](https://github.com/yourusername/incident-response-report-repo)** for this campaign.
+
+
 ## Deployment Notes
 * **Thresholds:** Adjust `failed_attempts >= 5` thresholds based on environment baselines.
 * **Scheduling:** Recommended cron schedule is `*/15 * * * *` for brute-force detections.

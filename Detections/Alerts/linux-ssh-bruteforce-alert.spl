@@ -1,4 +1,0 @@
-index=linux_logs action="Failed" process="ssh"
-| bin _time span=10m
-| stats count by source_ip, _time
-| where count >= 8

@@ -1,4 +1,4 @@
-## Firewall Bruteforce Alert SPL Query
+# Firewall Bruteforce Alert SPL Query
 
 index=firewall_logs Action="DENY"
 | rex field=Destination ":(?<dest_port>\d+)$"

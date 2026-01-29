@@ -23,4 +23,4 @@ This directory contains Splunk queries developed to detect the attack campaign d
 
 
 ## Operational Note
-The triage steps above outline the initial analyst actions for each detection. For the complete incident response lifecycle—including evidence of containment actions, eradication steps, and reporting, refer to the dedicated **[Incident Response Report](https://github.com/yourusername/incident-response-report-repo)** for this attack campaign.
+The triage steps above outline the initial analyst actions for each detection. For the complete incident response lifecycle—including evidence of containment actions, eradication steps, and reporting, refer to the dedicated **[Incident Response Report]([https://github.com/yourusername/incident-response-report-repo](https://github.com/Ihsan-Abdul/Incident-Response-Triage-Documentation))** for this attack campaign.

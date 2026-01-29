@@ -65,6 +65,6 @@ Security-Monitoring-Alert-Triage-Splunk-SIEM/
 ## Related Project: Incident Response Report
 This detection project is part one of a two-part portfolio series. The investigation documented here is continued in a dedicated Incident Response Report, which details the full forensic timeline, containment actions, and executive summary.
 
-Link to the companion report: Incident Response Report: Analysis of a 5-Day Brute Force Campaign (https://github.com/yourusername/incident-response-report-repo)
+Link to the companion report: Incident Response Report: Analysis of a 5-Day Brute Force Campaign ([https://github.com/yourusername/incident-response-report-repo](https://github.com/Ihsan-Abdul/Incident-Response-Triage-Documentation))
 
 ---

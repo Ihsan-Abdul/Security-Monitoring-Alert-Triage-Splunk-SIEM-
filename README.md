@@ -19,12 +19,8 @@ This project demonstrates a hands-on detection workflow using Splunk as a SIEM. 
 ## Project Structure & Navigation
 Security-Monitoring-Alert-Triage-Splunk-SIEM/
 *  README.md
-*  Detections -> The main queries built and documented
-      *  README.md -> Catalog of SPL queries
-*  Investigations -> Analysis & Deep Dives 
-      *  linux-analysis/
-      *  windows-analysis/
-      *  firewall-analysis/
+*  Detections -> Detection queries and Alerts built and documented
+*  Investigations -> Analysis and Deep Dives 
 *  Playbooks -> Alert triage procedures
 *  sample-logs -> Simulated log data
 

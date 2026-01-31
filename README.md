@@ -14,7 +14,7 @@ This project demonstrates a hands-on detection workflow using Splunk as a SIEM. 
 - **For Detection Logic**: Review the query catalog in `Detections/README.md`
 - **For Detailed Analysis**: See the investigation reports in `Investigations`
 - **For Triage Procedures**: Follow the playbook in `Playbooks/Alert-Triage-Playbook.md`
-- **To Reproduce**: Use the sample logs in `sample-logs`
+- **To Reproduce**: Use the sample logs in `Sample-Logs`
 
 ## Project Structure & Navigation
 Security-Monitoring-Alert-Triage-Splunk-SIEM/
@@ -28,8 +28,8 @@ Security-Monitoring-Alert-Triage-Splunk-SIEM/
 *  Playbooks -> Alert triage procedures
 *  sample-logs -> Simulated log data
 
-*   For Detection Logic: Review the query catalog and rationale in `/detections/README.md`.
-*   For Detailed Analysis: See the in-depth reports in the `/Investigations/` directory.
+*   For Detection Logic: Review the query catalog and rationale in `Detections/README.md`.
+*   For Detailed Analysis: See the in-depth reports in the `Investigations` directory.
 
 ## Technical Implementation
 
@@ -38,10 +38,10 @@ Security-Monitoring-Alert-Triage-Splunk-SIEM/
 *   Log Sources: Simulated logs from:
     *   Network Firewall (Deny/Allow events on ports 22, 3389, 4444)
     *   Windows Servers (Event IDs 4624, 4625, 4688, 4672)
-    *   Linux Servers (SSH auth logs via `/var/log/auth.log` format)
+    *   Linux Servers (SSH auth logs)
  
 ### Sample Data
-The anonymized log samples used in this project are available in the `/sample-logs/` directory:
+The anonymized log samples used in this project are available in the `Sample-Logs` directory:
 - `windows-logs.csv` - Windows Event Logs (4624, 4625, 4688, 4672)
 - `linux_ssh_logs.csv` - Linux SSH authentication logs
 - `firewall_logs.csv` - Firewall deny/allow events
@@ -65,14 +65,14 @@ The anonymized log samples used in this project are available in the `/sample-lo
 
 ### Prerequisites
 1.  Splunk Instance: Download and install Splunk Enterprise (Free) or start a trial.
-2.  Sample Data: The anonymized log samples used in this project are available in the `/sample-logs/` directory (See Next Steps below to create this).
+2.  Sample Data: The anonymized log samples used in this project are available in the `Sample-Logs` directory (See Next Steps below to create this).
 
 ### Step-by-Step Setup Guide (Conceptual)
 (A fully reproducible guide with automation is a planned enhancement. The current project focuses on the detection logic and analysis.)
 1.  Configure Data Inputs: In Splunk, set up dummy inputs for firewall, Windows, and Linux log formats.
 2.  Ingest Sample Logs: Use the sample-log files to populate your Splunk instance with the events described in the investigation reports.
 3.  Implement Detections: Search the SPL queries from the detections folder into Splunk searches.
-4.  Configure Alerts: Set alert actions per the screenshots in the `Detections/` folder.
+4.  Configure Alerts: Set alert actions per the screenshots in the `Detections` folder.
 5.  Investigate: Run the provided investigative queries to trace the attack from initial access to lateral movement.
 
 ---

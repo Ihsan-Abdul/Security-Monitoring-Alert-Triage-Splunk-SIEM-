@@ -11,10 +11,10 @@ This project demonstrates a hands-on detection workflow using Splunk as a SIEM. 
 *   Security Documentation: Creating detections, alerts and actionable playbooks for Security Operations Center use.
 
 ## Quick Start
-- **For Detection Logic**: Review the query catalog in `/Detections/README.md`
-- **For Detailed Analysis**: See the investigation reports in `/Investigations/`
-- **For Triage Procedures**: Follow the playbook in `/Playbooks/Alert-Triage-Playbook.md`
-- **To Reproduce**: Use the sample logs in `/sample-logs/`
+- **For Detection Logic**: Review the query catalog in `Detections/README.md`
+- **For Detailed Analysis**: See the investigation reports in `Investigations`
+- **For Triage Procedures**: Follow the playbook in `Playbooks/Alert-Triage-Playbook.md`
+- **To Reproduce**: Use the sample logs in `sample-logs`
 
 ## Project Structure & Navigation
 Security-Monitoring-Alert-Triage-Splunk-SIEM/

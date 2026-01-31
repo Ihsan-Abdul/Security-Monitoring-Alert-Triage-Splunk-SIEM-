@@ -64,7 +64,6 @@ The anonymized log samples used in this project are available in the `Sample-Log
 2.  Sample Data: The anonymized log samples used in this project are available in the `Sample-Logs` directory (See Next Steps below to create this).
 
 ### Step-by-Step Setup Guide (Conceptual)
-(A fully reproducible guide with automation is a planned enhancement. The current project focuses on the detection logic and analysis.)
 1.  Configure Data Inputs: In Splunk, set up dummy inputs for firewall, Windows, and Linux log formats.
 2.  Ingest Sample Logs: Use the sample-log files to populate your Splunk instance with the events described in the investigation reports.
 3.  Implement Detections: Search the SPL queries from the detections folder into Splunk searches.
